@@ -1,3 +1,9 @@
+---
+sidebar_position: 5
+title: Deploy a Docker container
+description: Deploying a Docker container into a cluster
+slug: /deploying-a-container
+---
 # Deploy a Docker container
 
 Kubernetes objects are configured through YAML manifests, more info
