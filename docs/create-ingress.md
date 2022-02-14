@@ -40,13 +40,13 @@ To get the public ip of your cluster, execute the following command:
 
 This will print out the following information:
 ```text
-Kubernetes control plane is running at https://123.232.213.251:6443
-CoreDNS is running at https://123.232.213.251:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Kubernetes control plane is running at https://203.0.113.1:6443
+CoreDNS is running at https://203.0.113.1:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ```
 
-`123.232.213.251` is the public ip of your cluster. Now you need to set an A record of the domain you would like to reach your service with to `123.232.213.251`.
+`203.0.113.1` would be the public ip of your cluster. Now you can create an A record of the domain you would like to reach your service with to `203.0.113.1`.
 ### 2. Creating a service
 
 ```yaml
