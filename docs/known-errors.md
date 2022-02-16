@@ -1,8 +1,8 @@
 ---
 sidebar_position: 8
-title: Known errors
-description: Known errors and frequently asked questions
-slug: /known-errors
+title: Troubleshooting
+description: Troubleshooting and frequently asked questions
+slug: /troubleshooting
 ---
 
 # Known errors
