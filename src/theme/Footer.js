@@ -44,7 +44,7 @@ export default function Footer(props) {
       </ul>
 
       <div className={styles.footerInfo}>
-        <span className={styles.copyrightTitle}>&copy; 2021 Symbiosis. All rights reserved.</span>
+        <span className={styles.copyrightTitle}>&copy; 2021-2022 Symbiosis. All rights reserved.</span>
         <span className={styles.contactInfo}>
           Contact{" "}
           <span className={styles.contactEmail}>
