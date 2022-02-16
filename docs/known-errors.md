@@ -35,5 +35,5 @@ kubectl certificate approve <name of csr>
 Now getting logs should work perfectly.
 
 :::info
-This only needs to be done until a feature that takes care of the certificate signing requests from nodes is implemented.
+This process needs to be performed manually until a controller is shipped that verifies the certificates out-of-band, it's on our backlog!
 :::
