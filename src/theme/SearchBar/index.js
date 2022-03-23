@@ -83,7 +83,7 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}) {
   }, []);
 
   const actionKey = useMemo(function () {
-    if (window !== 'undefined') {
+    if (typeof window !== "undefined") {
       return isAppleDevice() ? ACTION_KEY_APPLE : ACTION_KEY_DEFAULT;
     }
 
