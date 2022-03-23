@@ -5,7 +5,7 @@ on:
   push:
     paths:
       # Re-run the action if we change the workflow
-      - '.github/workflows/update-docsearch.yaml'
+      - '.github/workflows/docsearch.yaml'
       # This needs to match the location where
       # you store your documentation code and content
       - 'docs/**'
@@ -20,8 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Update DocSearch
-        # If your docs are in the root, omit the line below
-        working-directory: docs
         env:
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
