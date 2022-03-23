@@ -64,6 +64,7 @@ const config = {
       appId: 'IMQ0I0NAKK',
       apiKey: '245b6cbedb3505bd8f90516bd21bb86f',
       indexName: 'symbiosis-docs',
+      contextualSearch: false,
     },
   }),
 
