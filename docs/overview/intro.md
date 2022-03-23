@@ -23,15 +23,14 @@ When configuring your cluster take notice of the **NGINX Ingress option**,
 enabling this will add nginx-ingress and cert-manager. With these services you
 will be able to accept incoming HTTP traffic by setting up Kubernetes
 Ingresses. Remember that NGINX Ingress will provision an billable external load
-balancer. More information on [Accepting HTTP
-traffic](/accepting-http-traffic).
+balancer. More information on [Ingresses](/guides/ingresses).
 
 Nodes are charged end of month by the amount of minutes they've been operational. If you haven't set a payment method you will be prompted to do so after configuring your cluster.
 
 ## Configuring kubectl
 
 :::info
-If you don't have kubectl installed, read the more detailed instructions at [Setting up kubectl](/kubectl).
+If you don't have kubectl installed, read the more detailed instructions at [Setting up kubectl](/overview/kubectl).
 :::
 
 
