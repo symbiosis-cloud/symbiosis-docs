@@ -1,0 +1,33 @@
+name: Update DocSearch
+on:
+  # Allow to run manually
+  workflow_dispatch:
+  push:
+    paths:
+      # Re-run the action if we change the workflow
+      - '.github/workflows/update-docsearch.yaml'
+      # This needs to match the location where
+      # you store your documentation code and content
+      - 'docs/**'
+    branches:
+      - main
+jobs:
+  update-docsearch:
+    name: Update DocSearch
+    runs-on: ubuntu-20.04
+    steps:
+      # Check out latest code
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Update DocSearch
+        # If your docs are in the root, omit the line below
+        working-directory: docs
+				env:
+		      ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+		      ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+        run: |
+          docker run \
+            --env ALGOLIA_APP_ID=${ALGOLIA_APP_ID} \
+            --env ALGOLIA_API_KEY=${ALGOLIA_API_KEY} \
+            --env "CONFIG=$(cat docsearch.json | jq -r tostring)" \
+            algolia/docsearch-scraper
