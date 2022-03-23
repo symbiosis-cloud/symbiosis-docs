@@ -49,7 +49,6 @@ You can check that `kubectl` has been set up by listing all nodes:
 ```bash
 $ kubectl get nodes
 NAME                         STATUS   ROLES                  AGE   VERSION
-control-plane-int-1-ssjhly   Ready    control-plane,master   23h   v1.21.4
 general-int-1-feqtck         Ready    <none>                 23h   v1.21.4
 general-int-1-lbgyqx         Ready    <none>                 23h   v1.21.4
 ```
