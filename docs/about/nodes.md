@@ -2,6 +2,10 @@
 
 A Kubernetes node is a VM capable of running multiple workloads, most notably pods. Nodes can easily be provisioned for your cluster through the Web UI or [Terraform](/guides/terraform).
 
+## Hostpath volumes
+
+Nodes should be regarded as ephemeral as the node disk is wiped on cluster upgrades. Therefore you should avoid using hostpath volumes whenever possible. Note that this doesn't impact [PVC provisioned volumes](/guides/volumes).
+
 ## Node types
 
 Symbiosis offers three different node types, all running on modern AMD processors. As the cores are shared the nodes can be scheduled to run more efficiently which leads to much lower prices at comparable performance for the average use case.
