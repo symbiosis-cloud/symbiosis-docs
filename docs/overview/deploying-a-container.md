@@ -1,10 +1,7 @@
 ---
-sidebar_position: 5
-title: Deploy a Docker container
-description: Deploying a Docker container into a cluster
-slug: /deploying-a-container
+description: Deploying an OCI container into a Symbiosis cluster
 ---
-# Deploy a Docker container
+# Deploy a container
 
 Kubernetes objects are configured through YAML manifests, more info
 [here](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/).
@@ -49,4 +46,4 @@ Deploy the yaml to your cluster:
 kubectl create -f deploy.yaml
 ```
 
-While your container is now up and running it can't be accessed from the internet. If your container needs to accept HTTP requests read [how to accept HTTP traffic](/accepting-http-traffic).
+While your container is now up and running it can't be accessed from the internet. If your application should accept external requests over HTTPS look at [setting up an ingress](/guides/ingress).

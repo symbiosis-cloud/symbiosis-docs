@@ -44,5 +44,3 @@ control-plane-int-1-ssjhly   Ready    control-plane,master   23h   v1.21.4
 general-int-1-feqtck         Ready    <none>                 23h   v1.21.4
 general-int-1-lbgyqx         Ready    <none>                 23h   v1.21.4
 ```
-
-**Note:** User accounts are implemented as Kubernetes Service Accounts under the hood. This may be subject to change in the future.

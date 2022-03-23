@@ -1,0 +1,64 @@
+---
+sidebar_position: 2
+id: intro
+slug: /
+---
+
+# Quick Start
+
+This guide will help you set up configure and set-up a Kubernetes cluster in minutes. We will also help you configure kubectl for connecting to the cluster from your command line.
+
+## Creating the cluster
+
+To set-up your own cluster first [sign-in](https://app.symbiosis.host/signin). If you haven't used Symbiosis before you will be prompted to set a team name, your team name can easily be changed later on.
+
+### Configuring the cluster
+
+Next click on **Add new** under the **Kubernetes Clusters** tab in the sidebar.
+
+Make sure the name of your cluster conforms to [RFC 1123](https://datatracker.ietf.org/doc/html/rfc1123). In short, it should contain only lowercase alphanumeric characters or `-`, and need to start and end with an alphanumerical character. For example: `prod-cluster-germany-1`.
+
+
+When configuring your cluster take notice of the **NGINX Ingress option**,
+enabling this will add nginx-ingress and cert-manager. With these services you
+will be able to accept incoming HTTP traffic by setting up Kubernetes
+Ingresses. Remember that NGINX Ingress will provision an billable external load
+balancer. More information on [Accepting HTTP
+traffic](/accepting-http-traffic).
+
+Nodes are charged end of month by the amount of minutes they've been operational. If you haven't set a payment method you will be prompted to do so after configuring your cluster.
+
+## Configuring kubectl
+
+:::info
+If you don't have kubectl installed, read the more detailed instructions at [Setting up kubectl](/kubectl).
+:::
+
+
+In the Symbiosis UI navigate to the **User Account** tab and create a user account for yourself in order for `kubectl` to be able to authenticate against the new cluster.
+
+Click the **Download** button on your new account, this will download the kubeconfig file with all details needed to connect to your cluster.
+
+By default, kubectl looks for a config in `~/.kube/config`. Create the `.kube` directory if it doesn't exist and move the config there. Substitute `<CONFIG>` with the path to the downloaded config file.
+
+```bash
+$ mkdir -p ~/.kube && mv <CONFIG> ~/.kube/
+```
+
+You can check that `kubectl` has been set up by listing all nodes:
+
+```bash
+$ kubectl get nodes
+NAME                         STATUS   ROLES                  AGE   VERSION
+control-plane-int-1-ssjhly   Ready    control-plane,master   23h   v1.21.4
+general-int-1-feqtck         Ready    <none>                 23h   v1.21.4
+general-int-1-lbgyqx         Ready    <none>                 23h   v1.21.4
+```
+
+Voila! You're ready to start using your cluster.
+
+## Next steps
+
+If you prefer using a GUI to manage Kubernetes have a look at [Lens](https://k8slens.dev).
+
+For details on how to deploy your first docker image and start accepting HTTP traffic, see [Deploying a container](/overview/deploying-a-container).
