@@ -8,11 +8,11 @@ slug: /
 
 This guide will help you set up configure and set-up a Kubernetes cluster in minutes. We will also help you configure kubectl for connecting to the cluster from your command line.
 
-## Creating the cluster
+## Creating a Kubernetes cluster
 
 To set-up your own cluster first [sign-in](https://app.symbiosis.host/signin). If you haven't used Symbiosis before you will be prompted to set a team name, your team name can easily be changed later on.
 
-### Configuring the cluster
+### Configuration
 
 Next click on **Add new** under the **Kubernetes Clusters** tab in the sidebar.
 

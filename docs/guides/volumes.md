@@ -5,13 +5,29 @@ sidebar_position: 1
 
 Volumes offer persistent storage for your Kubernetes cluster. Volumes are created by defining [Persistent Volume Claims](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) (PVCs) in Kubernetes. Using PVCs allows nodes to read and write logs, database records, store metrics and enables many other use-cases that require persistent storage.
 
-Symbiosis supports volumes up to 1024 Gi, if you need larger volumes contact support.
+Symbiosis supports volumes up to 1024 GiB, if you need larger volumes contact support.
+
+## Creating a PVC
+
+Below is an example manifest to create a volume that can later be mounted to a pod:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: test-pvc
+spec:
+  storageClassName: symbiosis-block-storage # this line can be omitted as symbiosis-block-storage is the default CSI driver
+  volumeName: test-volume
+```
+
+You can read more about persistent volumes and their options in the [official documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
 
 ## Creating a StatefulSet with a PVC
 
 Unlike [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/), a StatefulSet ensures each pod has access to its own volume such that no two pods mount the same volume.
 
-A possible manifest for deploying a postgres database with a 64Gi volume could look like this:
+A possible manifest for deploying a postgres database with a 64GiB volume could look like this:
 
 ```yaml
 apiVersion: apps/v1
