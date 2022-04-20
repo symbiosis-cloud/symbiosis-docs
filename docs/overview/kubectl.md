@@ -29,10 +29,10 @@ In the Symbiosis UI navigate to the **User Account** tab and create a user accou
 
 Click the **Download** button on your new account, this will download the config file that you will use to connect to your cluster.
 
-By default, kubectl looks for a config in `~/.kube/config`. Lets create the `.kube` directory and move the config there.
+By default, kubectl looks for a config in `~/.kube/config`. The below command will create the `~/.kube` directory and merge any previous configurations into a new config file.
 
 ```bash
-$ mkdir -p ~/.kube && mv <PATH_TO_DOWNLOADED_CONFIG> ~/.kube/
+$ mkdir -p ~/.kube && KUBECONFIG=<PATH_TO_DOWNLOADED_CONFIG>:~/.kube/config kubectl config view --flatten > ~/.kube/config
 ```
 
 You can check that it works by listing all nodes:
@@ -40,6 +40,6 @@ You can check that it works by listing all nodes:
 ```bash
 $ kubectl get nodes
 NAME                         STATUS   ROLES                  AGE   VERSION
-general-int-1-feqtck         Ready    <none>                 23h   v1.21.4
-general-int-1-lbgyqx         Ready    <none>                 23h   v1.21.4
+general-int-1-feqtck         Ready    <none>                 23h   v1.23.5
+general-int-1-lbgyqx         Ready    <none>                 23h   v1.23.5
 ```
