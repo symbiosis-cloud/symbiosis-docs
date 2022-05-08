@@ -4,7 +4,7 @@ A Kubernetes node is a VM capable of running multiple workloads, most notably po
 
 ## Hostpath volumes
 
-Nodes should be regarded as ephemeral as the node disk is wiped on cluster upgrades. Therefore you should avoid using hostpath volumes whenever possible. Note that this doesn't impact [PVC provisioned volumes](/guides/volumes).
+Nodes should be regarded as ephemeral as the node disk is wiped on, for example, cluster upgrades, server failures or maintenance. Therefore you should avoid using hostpath volumes whenever possible. Note that this doesn't impact [PVC provisioned volumes](/guides/volumes), which is the recommended way to provision storage.
 
 ## Node types
 

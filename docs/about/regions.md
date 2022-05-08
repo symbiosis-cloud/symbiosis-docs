@@ -4,6 +4,6 @@ __Symbiosis is currently operating in Europe only__, but our aim is to expand in
 
 Current regions:
 
-| Identifier | Location           |
-| -          | -                  |
-| germany-1  | Frankfurt, Germany |
+| Identifier | Location             |
+| -          | -                    |
+| germany-1  | Falkenstein, Germany |
