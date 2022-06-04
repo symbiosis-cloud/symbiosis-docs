@@ -22,7 +22,7 @@ import Link from '@docusaurus/Link';
 
 function DocSidebarCategoryItem({item, activePath, level }) {
   return (
-    <li className="my-4">
+    <li className="my-1">
       <label className="inline-block ml-4 mb-2 font-semibold lowercase">{item.label}</label>
       {item.items && <DocSidebarItems items={item.items} activePath={activePath} level={level + 1} />}
     </li>
