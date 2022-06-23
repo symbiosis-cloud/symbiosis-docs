@@ -10,7 +10,7 @@ export default function Footer(props) {
           <span className="md:block hidden pl-3">
             Contact{" "}
             <span className="ml-1 font-medium">
-              info@stim.dev
+              info@symbiosis.host
             </span>
           </span>
         </div>
