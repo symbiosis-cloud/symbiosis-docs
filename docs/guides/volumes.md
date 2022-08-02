@@ -5,7 +5,9 @@ sidebar_position: 1
 
 Volumes offer persistent storage for your Kubernetes cluster. Volumes are created by defining [Persistent Volume Claims](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) (PVCs) in Kubernetes. Using PVCs allows nodes to read and write logs, database records, store metrics and enables many other use-cases that require persistent storage.
 
-Symbiosis supports volumes up to 1024 GiB, if you need larger volumes contact support.
+Symbiosis supports volumes up to 1024 GiB, if you need larger volumes please [contact us](mailto:info@symbiosis.host).
+
+Volumes are automatically encrypted on rest with LUKS.
 
 ## Creating a PVC
 
@@ -21,7 +23,7 @@ spec:
   volumeName: test-volume
 ```
 
-You can read more about persistent volumes and their options in the [official documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
+You can read more about persistent volumes and how they can be configured in the [official documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
 
 ## Creating a StatefulSet with a PVC
 

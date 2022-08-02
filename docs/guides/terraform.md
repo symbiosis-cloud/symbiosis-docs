@@ -36,7 +36,7 @@ terraform {
   required_providers {
     symbiosis = {
       source = "symbiosis-cloud/symbiosis"
-      version = ">= 0.1"
+      version = ">= 0.3"
     }
   }
 }
@@ -54,24 +54,24 @@ resource "symbiosis_cluster" "staging" {
 
 resource "symbiosis_node_pool" "general" {
   cluster = symbiosis_cluster.staging.name
-  node_type = "general-int-1"
+  node_type = "general-1"
   quantity = 2
 }
 
 resource "symbiosis_node_pool" "cpu" {
   cluster = symbiosis_cluster.staging.name
-  node_type = "cpu-int-3"
+  node_type = "memory-3"
   quantity = 4
 }
 ```
 
-The manifest will provision one Kubernetes cluster with two node pools, one pool with two general purpose nodes and another pool with four CPU optimized nodes. For a list of all node types see section on [Nodes](/about/nodes).
+The manifest will provision one Kubernetes cluster with two node pools, one pool with two general purpose nodes and another pool with four memory optimized nodes. For a list of all node types see section on [Nodes](/about/nodes).
 
 To create the cluster issue the following command:
 ```bash
 terraform apply --var "symbiosis_api_key=<YOUR API KEY>"
 ```
 
-Terraform will output a diff showing the new resources that will be created, make sure the diff is correct before proceeding. If any future changes are made issuing the same above command will edit the cluster to adhere to the new specification.
+Terraform will output a diff showing the new resources that will be created, make sure the diff aligns with your expectations before proceeding. If any future changes are made issuing the same above command will update the configuration.
 
 The terraform state will be stored locally as no backend has been defined. It's considered best practice (and especially useful if you work with others) to define a remote backend, see [the terraform documentation](https://www.terraform.io/language/settings/backends).
