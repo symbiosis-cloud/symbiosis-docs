@@ -7,15 +7,17 @@
 import React, {useState} from 'react';
 import clsx from 'clsx';
 import {
-  useThemeConfig,
   useAnnouncementBar,
+  useScrollPosition,
+} from '@docusaurus/theme-common/internal';
+import {
+  useThemeConfig,
   MobileSecondaryMenuFiller,
   ThemeClassNames,
-  useScrollPosition,
   useWindowSize
 } from '@docusaurus/theme-common';
 import Logo from '@theme/Logo';
-import IconArrow from '@theme/IconArrow';
+import IconArrow from '@theme/Icon/Arrow';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';

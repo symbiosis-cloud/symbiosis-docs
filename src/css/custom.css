@@ -98,9 +98,5 @@ ul {
   .padding-top--md {
     padding-top: 3rem !important;
   }
-
-  .container .row .col {
-    margin: 0 15px;
-  }
 }
 

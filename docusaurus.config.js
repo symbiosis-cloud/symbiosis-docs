@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const codeTheme = require('prism-react-renderer/themes/okaidia')
+const codeTheme = require('prism-react-renderer/themes/palenight')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
