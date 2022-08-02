@@ -18,13 +18,6 @@ Next click on **Add new** under the **Kubernetes Clusters** tab in the sidebar.
 
 Make sure the name of your cluster conforms to [RFC 1123](https://datatracker.ietf.org/doc/html/rfc1123). In short, it should contain only lowercase alphanumeric characters or `-`, and need to start and end with an alphanumerical character. For example: `prod-cluster-germany-1`.
 
-
-When configuring your cluster take notice of the **NGINX Ingress option**,
-enabling this will add nginx-ingress and cert-manager. With these services you
-will be able to accept incoming HTTP traffic by setting up Kubernetes
-Ingresses. Remember that NGINX Ingress will provision an billable external load
-balancer. More information on [Ingresses](/guides/ingresses).
-
 Nodes are charged end of month by the amount of minutes they've been operational. If you haven't set a payment method you will be prompted to do so after configuring your cluster.
 
 ## Configuring kubectl
