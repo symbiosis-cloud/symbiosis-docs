@@ -24,8 +24,8 @@ import Link from '@docusaurus/Link';
 
 function DocSidebarCategoryItem({item, activePath, level }) {
   return (
-    <li className="my-1">
-      <label className="inline-block ml-4 mb-2 font-semibold lowercase">{item.label}</label>
+    <li className="mt-4 mb-1">
+      <label className="inline-block ml-4 mb-1 font-semibold lowercase">{item.label}</label>
       {item.items && <DocSidebarItems items={item.items} activePath={activePath} level={level + 1} />}
     </li>
   )
@@ -35,7 +35,7 @@ function DocSidebarLinkItem({item, activePath, level }) {
   return (
     <li className="ml-4 border-l">
       <Link
-        className={clsx(activePath == item.href ? "border-blue-500 text-blue-500" : "text-gray-600 border-transparent", "flex hover:no-underline font-light -ml-[2px] border-l-[3px] leading-7 hover:border-blue-500 hover:text-blue-500 text-sm")}
+        className={clsx(activePath == item.href ? "border-blue-500 text-blue-500" : "text-gray-600 border-transparent", "flex hover:no-underline font-light -ml-[2px] border-l-[3px] leading-6 focus:outline-none focus:border-blue-500 focus:text-blue-500 hover:border-blue-500 hover:text-blue-500 text-sm")}
         to={item.href}
         key={item.href}>
         <span className="ml-4 lowercase">{item.label}</span>

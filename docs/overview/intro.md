@@ -41,9 +41,9 @@ You can check that `kubectl` has been set up by listing all nodes:
 
 ```bash
 $ kubectl get nodes
-NAME                         STATUS   ROLES                  AGE   VERSION
-general-int-1-feqtck         Ready    <none>                 23h   v1.23.5
-general-int-1-lbgyqx         Ready    <none>                 23h   v1.23.5
+NAME               STATUS   ROLES    AGE   VERSION
+general-1-feqtck   Ready    <none>   23h   v1.23.5
+general-1-lbgyqx   Ready    <none>   23h   v1.23.5
 ```
 
 Voila! You're ready to start using your cluster.
