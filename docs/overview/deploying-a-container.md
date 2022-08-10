@@ -46,4 +46,6 @@ Deploy the yaml to your cluster:
 kubectl create -f deploy.yaml
 ```
 
-While your container is now up and running it can't be accessed from the internet. If your application should accept external requests over HTTPS look at [setting up an ingress](/guides/ingresses).
+Voila! Your container should now be running, check its status by writing `kubectl describe pod my-backend-api`.
+
+However, your container will not be accessible from the internet. If you want to enable an ingress have a look at installing an ingress controller such as [NGINX Ingress](https://kubernetes.github.io/ingress-nginx/deploy/).
