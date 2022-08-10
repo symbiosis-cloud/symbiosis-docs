@@ -10,4 +10,4 @@ Symbiosis supports a set of three consecutive minor versions. If your cluster ve
 
 During an update, the control plane with controllers and data store is upgraded to the new version. Your workloads will not be impacted during the upgrade.
 
-After control planes are upgraded Symbiosis will begin replacing your pools with nodes of the new version. Symbiosis will spawn additional nodes in order to avoid any downtime, this means that for a period after an upgrade your pools will contain more nodes than requested.
+After control planes are upgraded Symbiosis will begin replacing your pools with nodes of the new version. Symbiosis will spawn additional nodes in order to avoid any downtime, this means that for a period after an upgrade your pools will contain more billable nodes than requested.
