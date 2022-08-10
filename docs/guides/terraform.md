@@ -65,7 +65,7 @@ resource "symbiosis_node_pool" "cpu" {
 }
 ```
 
-The manifest will provision one Kubernetes cluster with two node pools, one pool with two general purpose nodes and another pool with four memory optimized nodes. For a list of all node types see section on [Nodes](/about/nodes).
+The manifest will provision one Kubernetes cluster with two node pools, one pool with two general purpose nodes and another pool with four memory optimized nodes. For a list of all node types see section on [Nodes](/reference/nodes).
 
 To create the cluster issue the following command:
 ```bash
