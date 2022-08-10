@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Roadmap
 
 This section outlines our current prioritisation and may be subject to change.

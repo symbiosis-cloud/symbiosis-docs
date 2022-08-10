@@ -8,7 +8,17 @@ Nodes should be regarded as ephemeral as the node disk is wiped on, for example,
 
 ## Node types
 
-Symbiosis offers three different node types, all running on modern AMD processors. As the cores are shared the nodes can be scheduled to run more efficiently which leads to much lower prices at comparable performance for the average use case.
+All nodes run on modern AMD processors. As the cores are shared the nodes can be scheduled to run more efficiently which allows us to offer much lower prices at comparable performance for the average use case.
+
+## Networking
+
+Nodes are configured with one NAT interface for internet traffic, and one VXLAN interface for inter-node traffic. Only egress traffic over the NAT interface will count towards your nodes monthly traffic allotment. We currently don't offer any support for fixed outbound addresses or per-node publicly routable IP addresses.
+
+## Security
+
+We use a [zero trust security model](https://en.wikipedia.org/wiki/Zero_trust_security_model). All nodes communicate with api-servers over mutual TLS with Symbiosis handling the distribution, signing and renewal of node and control plane certificates.
+
+Node images are automatically encrypted on rest using LUKS.
 
 ### General Purpose
 

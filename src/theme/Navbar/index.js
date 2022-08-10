@@ -308,7 +308,7 @@ export default function Navbar() {
           <a
             target="_blank"
             href="https://app.symbiosis.host"
-            className="ml-2 text-sm shadow rounded bg-[color:var(--ifm-menu-color)] px-2.5 py-1.5 text-white font-semibold opacity-75 hover:opacity-100 hover:text-white hover:no-underline flex items-center gap-1"
+            className="ml-2 text-sm shadow rounded bg-[color:var(--ifm-menu-color)] px-2.5 py-1.5 text-white font-semibold opacity-75 focus:opacity-100 focus:outline-none hover:opacity-100 hover:text-white hover:no-underline flex items-center gap-1"
             aria-label="Twitter"
             rel="noreferrer"
           >
