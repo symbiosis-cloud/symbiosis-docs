@@ -26,8 +26,8 @@ Node images are automatically encrypted on rest using LUKS.
 | -         | -:    | -:     | -:      | -:                      |
 | general-1 | 1     | 2 GiB  | 1 TiB   | $0.000111/m ($4.80/mo)  |
 | general-2 | 2     | 4 GiB  | 2 TiB   | $0.000222/m ($9.60/mo)  |
-| general-3 | 4     | 8 GiB  | 3 TiB   | $0.000444/m ($19.20/mo) |
-| general-4 | 8     | 16 GiB | 4 TiB   | $0.000889/m ($38.40/mo) |
+| general-3 | 4     | 8 GiB  | 4 TiB   | $0.000444/m ($19.20/mo) |
+| general-4 | 8     | 16 GiB | 6 TiB   | $0.000889/m ($38.40/mo) |
 
 ### Memory Optimized
 
@@ -35,5 +35,5 @@ Node images are automatically encrypted on rest using LUKS.
 | -        | -:    | -:     | -:      | -:                      |
 | memory-1 | 1     | 4 GiB  | 1 TiB   | $0.000167/m ($7.20/mo)  |
 | memory-2 | 2     | 8 GiB  | 2 TiB   | $0.000333/m ($14.40/mo) |
-| memory-3 | 4     | 16 GiB | 3 TiB   | $0.000667/m ($28.80/mo) |
-| memory-4 | 8     | 32 GiB | 4 TiB   | $0.001333/m ($57.60/mo) |
+| memory-3 | 4     | 16 GiB | 4 TiB   | $0.000667/m ($28.80/mo) |
+| memory-4 | 8     | 32 GiB | 6 TiB   | $0.001333/m ($57.60/mo) |
