@@ -14,6 +14,11 @@ All nodes run on modern AMD processors. As the cores are shared the nodes can be
 
 Nodes are configured with one NAT interface for internet traffic, and one VXLAN interface for inter-node traffic. Only egress traffic over the NAT interface will count towards your nodes monthly traffic allotment. We currently don't offer any support for fixed outbound addresses or per-node publicly routable IP addresses.
 
+
+## Usable memory
+
+Part of the memory and CPU allocation of each node is required for critical processes and daemons such as init system, kubelet, CSI- and CNI daemons. Under normal operation these services will reserve around ~400MiB of memory, meaning that a 2vCPU/4GiB node will have around 3700MiB of usable memory.
+
 ## Security
 
 We use a [zero trust security model](https://en.wikipedia.org/wiki/Zero_trust_security_model). All nodes communicate with api-servers over mutual TLS with Symbiosis handling the distribution, signing and renewal of node and control plane certificates.
