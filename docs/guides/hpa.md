@@ -2,16 +2,20 @@
 sidebar_position: 4
 ---
 
-# Horizontal Pod Autoscaling
+# Horizontal Pod Autoscaler (HPA)
 
-This guide will help you set up a Horizontal Pod Autoscaler in your cluster.
+This guide will help you set up a Horizontal Pod Autoscaler (also called HPA) in your cluster.
 
-You can find more information about what Horizontal Pod Autoscaler is and how it works [here](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/).
+In short, A Horizontal Pod Autoscaler will autoscale your workload (deployments, statefulsets etc) based on metrics such as CPU or Memory.
+When the metric(s) that you wish to use (for example CPU usage) exceeds your defined thresholds the HPA will automatically scale your workload up.
+Should the average utilisation drop the HPA will scale your workload down again.
+
+You can find more information about what an HPA is and how it works [here](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/).
 
 ## Installing the Kubernetes Metrics Server
 
-In order to use a Horizontal Pod Autoscaler you will need to enable the Kubernetes Metrics Server. This can be easily done via Kubectl or Helm.
-A Horizontal Pod Autoscaler uses the Metrics Server in order to determine the current usage of pods so it can make accurate scaling decisions.
+In order to use an HPA you will need to enable the Kubernetes Metrics Server. This can be easily done via Kubectl or Helm.
+An HPA uses the Metrics Server in order to determine the current usage of pods so it can make accurate scaling decisions.
 
 ### Option 1) Installation via kubectl (easiest)
 
@@ -34,7 +38,7 @@ helm upgrade --install metrics-server metrics-server/metrics-server
 
 ## Creating your Horizontal Pod Autoscaler
 
-In order for us to test if the Horizontal Pod Autoscaler will work we will need to create a sample deployment:
+In order for us to test if the HPA will work we will need to create a sample deployment:
 
 ```
 cat <<EOF | kubectl apply -f -
@@ -65,13 +69,39 @@ spec:
 EOF
 ```
 
-Now you can create a simple autoscaler as such:
+Now you can create a simple HPA as such:
 
 ```
 kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 ```
 
-If the targets show up correctly as x%/50% then it means that the Horizontal Pod Autoscaler works as intended and the .
+This will create an HPA for the php-apache deployment. It will scale up when the average CPU usage of your pods exceeds 50% up to 10 pods total.
+
+The resulting HPA will look like this:
+
+```
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+  namespace: default
+spec:
+  maxReplicas: 10
+  metrics:
+  - resource:
+      name: cpu
+      target:
+        averageUtilization: 50
+        type: Utilization
+    type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: php-apache
+```
+
+If the targets show up correctly as x%/50% then it means that the HPA works as intended and the Metrics Server returns a valid value.
 
 ```
 kubectl get hpa -w
