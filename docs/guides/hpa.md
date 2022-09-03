@@ -6,7 +6,7 @@ sidebar_position: 4
 
 This guide will help you set up a Horizontal Pod Autoscaler (also called HPA) in your cluster.
 
-In short, A Horizontal Pod Autoscaler will autoscale your workload (deployments, statefulsets etc) based on metrics such as CPU or Memory.
+In short, A Horizontal Pod Autoscaler can automatically scale the amount of replicas for your deployments, stateful sets or other workloads. Scaling can be configured based on metrics like CPU or Memory.
 When the metric(s) that you wish to use (for example CPU usage) exceeds your defined thresholds the HPA will automatically scale your workload up.
 Should the average utilisation drop the HPA will scale your workload down again.
 
