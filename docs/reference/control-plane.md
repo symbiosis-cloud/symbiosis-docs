@@ -4,7 +4,7 @@ With Symbiosis your Kubernetes control plane is fully managed and free of charge
 
 ## High-availability (HA)
 
-What happens if your control plane is unreachable? A temporary disruption might be acceptable for certain environments; for business critical applications that rely on an always-accessible API-server it can be less than ideal. Incidents happen even in the most reliable and highly redundant data centers, it's therefore important to plan for how to keep your applications running if worst comes to worst.
+An unreachable control plane can be problematic for business critical applications that rely on an always accessible API server. For example, while running pods will continue to operate workloads configured with an Horizontal Pod Autoscaler will only scale when the control plane is accessible. It's therefore important to plan for how to keep your applications running if worst comes to worst.
 
 At Symbiosis a cluster can be configured for high availability (HA). With HA your control plane will be managed by multiple replicas that can protect against downtime in case of single-node failures and disruptions.
 
