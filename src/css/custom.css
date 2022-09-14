@@ -40,13 +40,13 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 @layer base {
   h1 {
-    @apply text-3xl;
+    @apply text-3xl text-gray-700;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-2xl text-gray-700;
   }
   h3 {
-    @apply text-xl;
+    @apply text-xl text-gray-700;
   }
   table {
     @apply rounded-lg shadow inline-block border;
@@ -96,7 +96,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 @media (min-width: 1024px) {
   .padding-top--md {
-    padding-top: 3rem !important;
+    padding-top: 1.5rem !important;
+  }
+  :root {
+    --ifm-spacing-horizontal: 1.5rem;
   }
 }
 

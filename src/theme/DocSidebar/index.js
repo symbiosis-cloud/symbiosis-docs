@@ -7,12 +7,13 @@
 import React, {useState} from 'react';
 import clsx from 'clsx';
 import {
+  useNavbarMobileSidebar,
   useAnnouncementBar,
+  NavbarSecondaryMenuFiller,
   useScrollPosition,
 } from '@docusaurus/theme-common/internal';
 import {
   useThemeConfig,
-  MobileSecondaryMenuFiller,
   ThemeClassNames,
   useWindowSize
 } from '@docusaurus/theme-common';
@@ -31,11 +32,11 @@ function DocSidebarCategoryItem({item, activePath, level }) {
   )
 }
 
-function DocSidebarLinkItem({item, activePath, level }) {
+function DocSidebarLinkItem({item, activePath }) {
   return (
     <li className="ml-4 border-l">
       <Link
-        className={clsx(activePath == item.href ? "border-blue-500 text-blue-500" : "text-gray-600 border-transparent", "flex hover:no-underline font-light -ml-[2px] border-l-[3px] leading-6 focus:outline-none focus:border-blue-500 focus:text-blue-500 hover:border-blue-500 hover:text-blue-500 text-sm")}
+        className={clsx(activePath == item.href ? "border-blue-500 text-blue-500" : "text-gray-600 border-transparent", "flex hover:no-underline font-light -ml-[2px] border-l-[2px] leading-6 focus:outline-none focus:border-blue-500 focus:text-blue-500 hover:border-blue-500 hover:text-blue-500 text-sm")}
         to={item.href}
         key={item.href}>
         <span className="ml-4 lowercase">{item.label}</span>
@@ -106,10 +107,10 @@ function DocSidebarDesktop({path, sidebar, onCollapse, isHidden}) {
       })}>
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
       <nav
-        className={clsx('menu thin-scrollbar', styles.menu, {
+        className={clsx('menu', styles.menu, {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
         })}>
-        <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list', "mx-1 mt-5")}>
+        <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list', "mx-1")}>
           <DocSidebarItems items={sidebar} activePath={path} level={1} />
         </ul>
       </nav>
@@ -118,13 +119,23 @@ function DocSidebarDesktop({path, sidebar, onCollapse, isHidden}) {
   );
 }
 
-const DocSidebarMobileSecondaryMenu = ({toggleSidebar, sidebar, path}) => {
+const DocSidebarMobileSecondaryMenu = ({sidebar, path}) => {
+  const mobileSidebar = useNavbarMobileSidebar();
   return (
     <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
       <DocSidebarItems
         items={sidebar}
         activePath={path}
-        onItemClick={() => toggleSidebar()}
+        onItemClick={(item) => {
+console.log(item)
+          // Mobile sidebar should only be closed if the category has a link
+          if (item.type === 'category' && item.href) {
+            mobileSidebar.toggle();
+          }
+          if (item.type === 'link') {
+            mobileSidebar.toggle();
+          }
+        }}
         level={1}
       />
     </ul>
@@ -133,7 +144,7 @@ const DocSidebarMobileSecondaryMenu = ({toggleSidebar, sidebar, path}) => {
 
 function DocSidebarMobile(props) {
   return (
-    <MobileSecondaryMenuFiller
+    <NavbarSecondaryMenuFiller
       component={DocSidebarMobileSecondaryMenu}
       props={props}
     />
