@@ -19,6 +19,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: test-pvc
 spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi # amount of storage to be requested
   storageClassName: symbiosis-block-storage # this line can be omitted as symbiosis-block-storage is the default CSI driver
   volumeName: test-volume
 ```
