@@ -33,3 +33,8 @@ kubectl get svc my-service --output jsonpath='{.status.loadBalancer.ingress[0].i
 
 
 Billing will start as soon as the load balancer is created and will be billed by the minute until it has been deleted.
+
+## UDP load balancing
+
+Currently Symbiosis does not support UDP load balancing, however we do plan on supporting it in the future.
+Keep an eye on our [roadmap](https://docs.symbiosis.host/about/roadmap).
