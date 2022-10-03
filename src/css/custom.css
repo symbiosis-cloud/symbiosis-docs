@@ -13,6 +13,7 @@
 :root {
   --ifm-color-primary: #338cf4;
   --ifm-menu-color: #272822;
+  --ifm-color-content: #4c4c4c;
   /* --ifm-menu-color: #666666; */
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
