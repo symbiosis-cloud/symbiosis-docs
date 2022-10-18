@@ -3,6 +3,24 @@
 
 const codeTheme = require('prism-react-renderer/themes/palenight')
 
+const redocusaurus = [
+	'redocusaurus',
+	{
+	  specs: [
+		{
+		  id: 'api-docs',
+		  spec: 'https://api.symbiosis.host/v3/api-docs',
+		  route: '/api',
+		},
+	  ],
+	  theme: {
+		primaryColor: '#1890ff',
+		options: { disableSearch: true },
+		theme: {},
+	  },
+	},
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Symbiosis',
@@ -31,6 +49,7 @@ const config = {
         },
       }),
     ],
+	redocusaurus,
   ],
 
   themeConfig:
@@ -48,7 +67,19 @@ const config = {
         src: 'img/logo.png',
         target: '_self',
       },
-      items: [],
+	  items: [
+		{
+		  type: 'doc',
+		  docId: 'overview/intro',
+		  position: 'left',
+		  label: 'Documentation',
+		},
+		{
+		  to: "/api/",
+		  label: "API",
+		  position: "left",
+		},
+	  ],
     },
     footer: {
       style: 'light',

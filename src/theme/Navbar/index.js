@@ -200,7 +200,7 @@ function Logo() {
     navbar,
   } = useThemeConfig();
   return (
-    <a className="select-none cursor-pointer text-2xl font-bold leading-tighter tracking-tighter focus:outline-none hover:no-underline" href={navbar.logo.href}>
+    <a className="mr-5 select-none cursor-pointer text-2xl font-bold leading-tighter tracking-tighter focus:outline-none hover:no-underline" href={navbar.logo.href}>
       <div className="inline-block whitespace-nowrap">
         <span className="text-gray-800 inline-flex items-center justify-center inline-block font-bold lowercase">
           {navbar.title}
