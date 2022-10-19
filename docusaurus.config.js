@@ -9,7 +9,7 @@ const redocusaurus = [
 	  specs: [
 		{
 		  id: 'api-docs',
-		  spec: 'https://api.symbiosis.host/v3/api-docs',
+		  spec: process.env.API_DOCS_URL || 'https://api.symbiosis.host/v3/api-docs',
 		  route: '/api',
 		},
 	  ],
@@ -72,7 +72,7 @@ const config = {
 		  type: 'doc',
 		  docId: 'overview/intro',
 		  position: 'left',
-		  label: 'Documentation',
+		  label: 'Docs',
 		},
 		{
 		  to: "/api/",
