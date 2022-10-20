@@ -20,15 +20,23 @@ const sidebars = {
     type: 'category',
     label: 'Resources',
     collapsed: false,
-    items: [{
-      type: 'link',
-      label: 'Terraform Provider Docs',
-      href: 'https://registry.terraform.io/providers/symbiosis-cloud/symbiosis/latest/docs',
-    }, {
-      type: 'link',
-      label: 'Golang SDK',
-      href: 'https://github.com/symbiosis-cloud/symbiosis-go',
-    }],
+    items: [
+		{
+		  type: 'link',
+		  label: 'Terraform Provider Docs',
+		  href: 'https://registry.terraform.io/providers/symbiosis-cloud/symbiosis/latest/docs',
+		},
+		{
+		  type: 'link',
+		  label: 'Golang SDK',
+		  href: 'https://github.com/symbiosis-cloud/symbiosis-go',
+		},
+		{
+		  type: 'link',
+		  label: 'API Docs',
+		  href: '/api',
+		},
+	],
   }],
 };
 
